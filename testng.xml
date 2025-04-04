@@ -1,24 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Test Suite">
     <test name="Group Run">
-        <groups>
-            <run>
-                <include name="webCases"/>
-                <include name="mobileCases"/>
-            </run>
-        </groups>
         <classes>
-            <class name="com.ctflearn.web.TC001_Web_CreateNewChallenge">
-                <methods>
-                    <include name="verifyNewChallengeCreatedSuccessfully"/>
-                </methods>
-            </class>
-
-            <class name="com.ctflearn.mobile.TC001_Mobile_ViewPortfolio">
-                <methods>
-                    <include name="viewPortfolioSuccessfully"/>
-                </methods>
-            </class>
+            <class name="com.ctflearn.web.TC001_Web_CreateNewChallenge" />
+            <class name="com.ctflearn.mobile.TC001_Mobile_ViewPortfolio" />
         </classes>
     </test>
 </suite>

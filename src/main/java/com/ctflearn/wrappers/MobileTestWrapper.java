@@ -261,8 +261,6 @@ public class MobileTestWrapper {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1L));
         wait.ignoring(StaleElementReferenceException.class);
 
-        System.out.println("Control: " + control);
-
         //wait timeout occurs 10 times of waitingTime. So, the method will run between 25-150 seconds
         while ((System.currentTimeMillis() - startTime) < (waitingTime * 1000)) {
             logger.debug("Searching for element {}: '{}.'", expectedConditionsMethodName, control);

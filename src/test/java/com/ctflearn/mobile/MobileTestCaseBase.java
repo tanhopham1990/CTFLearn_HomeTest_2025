@@ -5,22 +5,19 @@ import com.ctflearn.utils.ExtentManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import com.ctflearn.pageobjects.mobile.DashboardMobilePage;
 import com.ctflearn.wrappers.MobileTestWrapper;
-import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 
-public class MobileTestCaseBase {
+public abstract class MobileTestCaseBase {
 
     private static final Logger logger = LogManager.getLogger(MobileTestCaseBase.class.getSimpleName());
 
     protected MobileTestWrapper mobileTestWrapper = new MobileTestWrapper();;
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setupExtentReports() {
         ExtentManager.createInstance();
     }
@@ -29,7 +26,7 @@ public class MobileTestCaseBase {
     public void setUp() throws AutomationException {
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) throws AutomationException {
         String screenshotPath = null;
         if (result.getStatus() == ITestResult.FAILURE) {
@@ -38,13 +35,13 @@ public class MobileTestCaseBase {
             screenshotPath = path + File.separator + fileName;
             mobileTestWrapper.captureMobileDriverScreenshot(path, fileName);
         }
-        ExtentManager.generateReport(screenshotPath);
+//        ExtentManager.generateReport(screenshotPath);
         if (mobileTestWrapper != null) {
             mobileTestWrapper.closeMobileDriver();
         }
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void flushReports() {
         ExtentManager.flushReports();
     }

@@ -1,9 +1,12 @@
 package com.ctflearn.web;
 
+import com.ctflearn.mobile.MobileTestCaseBase;
 import com.ctflearn.utils.ExtentManager;
 import com.ctflearn.wrappers.WebTestWrapper;
 import com.ctflearn.utils.ConfigManager;
 import com.ctflearn.exception.AutomationException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import com.ctflearn.pageobjects.web.LoginPage;
@@ -12,20 +15,21 @@ import java.io.File;
 
 public abstract class WebTestCaseBase {
 
+    private static final Logger logger = LogManager.getLogger(WebTestCaseBase.class.getSimpleName());
+
     protected WebTestWrapper webTestWrapper = new WebTestWrapper();;
     protected ConfigManager configManager = new ConfigManager();
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setupExtentReports() {
         ExtentManager.createInstance();
     }
 
     @BeforeMethod
     public void setUp() throws AutomationException {
-//        openCtfLearnApp();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) throws AutomationException {
         String screenshotPath = null;
         if (result.getStatus() == ITestResult.FAILURE) {
@@ -34,13 +38,13 @@ public abstract class WebTestCaseBase {
             screenshotPath = path + File.separator + fileName;
             webTestWrapper.captureWebDriverScreenshot(path, fileName);
         }
-        ExtentManager.generateReport(screenshotPath);
+//        ExtentManager.generateReport(screenshotPath);
         if (webTestWrapper != null) {
             webTestWrapper.closeWebBrowser();
         }
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void flushReports() {
         ExtentManager.flushReports();
     }

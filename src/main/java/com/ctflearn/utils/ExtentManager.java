@@ -2,6 +2,7 @@ package com.ctflearn.utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,16 @@ public class ExtentManager {
 
     public static void createTest(String name) {
         test = extent.createTest(name);
+    }
+
+    public static void log(String message) {
+        test.log(Status.INFO, message);
+    }
+
+    public static void fail(String message, String screenshotPath) {
+        test.log(Status.FAIL, message);
+        if (screenshotPath != null)
+            test.addScreenCaptureFromPath(screenshotPath);
     }
 
     public static void generateReport(String screenshotPath) {
