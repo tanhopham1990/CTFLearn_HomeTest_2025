@@ -18,8 +18,11 @@ public class ConfigManager {
 
     private void loadProperties() {
         loadProperty("config.properties");
-        loadProperty(properties.getProperty("environment") + ".properties");
-        loadProperty(properties.getProperty("mobilePlatform") + ".properties");
+        System.out.println("Env: " + System.getProperty("environment"));
+        String environment = System.getProperty("environment") != null &&  !System.getProperty("environment").trim().equalsIgnoreCase("") ? System.getProperty("environment") : properties.getProperty("environment");
+        String mobilePlatform = System.getProperty("mobilePlatform") != null && !System.getProperty("mobilePlatform").trim().equalsIgnoreCase("") ? System.getProperty("mobilePlatform") : properties.getProperty("mobilePlatform");
+        loadProperty(environment + ".properties");
+        loadProperty(mobilePlatform + ".properties");
     }
 
     private void loadProperty(String propertyName) {

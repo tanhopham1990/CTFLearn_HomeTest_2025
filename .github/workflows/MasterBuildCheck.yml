@@ -28,3 +28,7 @@ jobs:
       - name: Build framework with Maven
         run: |
           mvn clean install
+
+      - name: Execute test case
+        run: |
+          mvn test -Denvironment=qa -Dgroups=webCases

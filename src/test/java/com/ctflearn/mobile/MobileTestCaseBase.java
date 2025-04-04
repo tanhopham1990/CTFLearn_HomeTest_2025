@@ -19,7 +19,6 @@ public class MobileTestCaseBase {
     private static final Logger logger = LogManager.getLogger(MobileTestCaseBase.class.getSimpleName());
 
     protected MobileTestWrapper mobileTestWrapper = new MobileTestWrapper();;
-    protected DashboardMobilePage dashboardMobilePage;
 
     @BeforeSuite
     public void setupExtentReports() {
@@ -28,7 +27,6 @@ public class MobileTestCaseBase {
 
     @BeforeMethod
     public void setUp() throws AutomationException {
-        openTradingMobileApp();
     }
 
     @AfterMethod
@@ -51,9 +49,9 @@ public class MobileTestCaseBase {
         ExtentManager.flushReports();
     }
 
-    protected void openTradingMobileApp() throws AutomationException {
+    protected DashboardMobilePage openTradingMobileApp() throws AutomationException {
         mobileTestWrapper.initializeMobileDriver();
-        dashboardMobilePage = new DashboardMobilePage(mobileTestWrapper);
+        return new DashboardMobilePage(mobileTestWrapper);
     }
 
 }

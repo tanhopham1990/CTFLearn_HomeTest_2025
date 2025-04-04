@@ -14,7 +14,6 @@ public abstract class WebTestCaseBase {
 
     protected WebTestWrapper webTestWrapper = new WebTestWrapper();;
     protected ConfigManager configManager = new ConfigManager();
-    protected LoginPage loginPage;
 
     @BeforeSuite
     public void setupExtentReports() {
@@ -23,7 +22,7 @@ public abstract class WebTestCaseBase {
 
     @BeforeMethod
     public void setUp() throws AutomationException {
-        openCtfLearnApp();
+//        openCtfLearnApp();
     }
 
     @AfterMethod
@@ -46,9 +45,9 @@ public abstract class WebTestCaseBase {
         ExtentManager.flushReports();
     }
 
-    protected void openCtfLearnApp() throws AutomationException {
+    protected LoginPage openCtfLearnApp() throws AutomationException {
         webTestWrapper.initializeWebBrowser(configManager.getValueOfProperty("browser"), configManager.getValueOfProperty("baseUrl"));
-        loginPage = new LoginPage(webTestWrapper);
+        return new LoginPage(webTestWrapper);
     }
 
 }
