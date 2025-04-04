@@ -1,0 +1,32 @@
+2025-04-04 11:05:31 [main] INFO  MobileTestWrapper - Starting a new 'ANDROID' Driver
+2025-04-04 11:05:32 [main] INFO  MobileTestWrapper - Starting a new Appium service
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - Appium service started with URL http://0.0.0.0:31773/.
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - =============================================================
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (adbExecTimeout): [60000]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (androidInstallTimeout): [120000]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (app): [/Users/tanho/Documents/App/mobiletrader.apk]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (appActivity): [com.roboforex.webtrader/.MainActivity]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (appPackage): [com.roboforex.webtrader]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (autoAcceptAlerts): [true]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (autoGrantPermissions): [true]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (autoLaunch): [true]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (automationName): [UiAutomator2]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (browserName): []
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (browserVersion): []
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (dataReset): [true]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (deviceName): [emulator-5554]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (platformName): [ANDROID]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (uiautomator2ServerInstallTimeout): [60000]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - capabilities (uiautomator2ServerLaunchTimeout): [60000]
+2025-04-04 11:05:33 [main] INFO  MobileTestWrapper - =============================================================
+2025-04-04 11:05:39 [main] INFO  AbstractMobilePage - Click on Skip button
+2025-04-04 11:05:39 [main] INFO  AbstractMobilePage - Click on Sign In button
+2025-04-04 11:05:42 [main] INFO  LoginMobilePage - Enter email: tanhopham1990@gmail.com
+2025-04-04 11:05:43 [main] INFO  LoginMobilePage - Enter password: 2b0C62a9@Mz
+2025-04-04 11:05:43 [main] INFO  LoginMobilePage - Click on Login button
+2025-04-04 11:05:44 [main] INFO  AbstractMobilePage - Click on Not Now button
+2025-04-04 11:05:56 [main] INFO  AbstractMobilePage - Click on CopyFx button
+2025-04-04 11:05:56 [main] INFO  CopyFxMobilePage - Verify portfolio displays
+2025-04-04 11:05:58 [main] INFO  AbstractMobilePage - Tap on toggle menu button
+2025-04-04 11:05:58 [main] INFO  AbstractMobilePage - Tap on Logout button
+2025-04-04 11:05:59 [main] INFO  MobileTestWrapper - Mobile driver is closing ...

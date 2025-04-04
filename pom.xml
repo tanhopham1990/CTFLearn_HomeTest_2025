@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>CTFLearn_HomeTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.seleniumhq.selenium.version>4.27.0</org.seleniumhq.selenium.version>
+        <org.testng.version>7.10.2</org.testng.version>
+        <com.aventstack.version>5.1.2</com.aventstack.version>
+        <org.apache.logging.log4j.version>2.19.0</org.apache.logging.log4j.version>
+        <org.projectlombok.lombok.version>1.18.34</org.projectlombok.lombok.version>
+        <io.github.bonigarcia.webdrivermanager.version>5.9.2</io.github.bonigarcia.webdrivermanager.version>
+        <io.appium.java-client.version>9.2.2</io.appium.java-client.version>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${org.seleniumhq.selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${org.testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${com.aventstack.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>log4j-api</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <version>${org.apache.logging.log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>log4j-core</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <version>${org.apache.logging.log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>lombok</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <scope>provided</scope>
+            <version>${org.projectlombok.lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>webdrivermanager</artifactId>
+            <groupId>io.github.bonigarcia</groupId>
+            <version>${io.github.bonigarcia.webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${io.appium.java-client.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
